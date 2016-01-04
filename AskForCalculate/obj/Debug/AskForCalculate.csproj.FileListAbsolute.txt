@@ -1,0 +1,9 @@
+D:\projects\temp\WcfService\AskForCalculate\bin\Debug\AskForCalculate.exe.config
+D:\projects\temp\WcfService\AskForCalculate\bin\Debug\AskForCalculate.exe
+D:\projects\temp\WcfService\AskForCalculate\bin\Debug\AskForCalculate.pdb
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.csprojResolveAssemblyReference.cache
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.AskForCalculationForm.resources
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.Properties.Resources.resources
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.csproj.GenerateResource.Cache
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.exe
+D:\projects\temp\WcfService\AskForCalculate\obj\Debug\AskForCalculate.pdb
