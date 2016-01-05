@@ -31,9 +31,9 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+      <xsd:import schemaLocation="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IВistributedСalculation_RememberCalculationUnit_InputMessage">
@@ -54,6 +54,12 @@
   <wsdl:message name="IВistributedСalculation_Calculate_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:CalculateResponse" />
   </wsdl:message>
+  <wsdl:message name="IВistributedСalculation_Ping_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IВistributedСalculation_Ping_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
   <wsdl:portType msc:usingSession="true" name="IВistributedСalculation">
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RememberCalculationUnit">
       <wsdl:input wsaw:Action="http://tempuri.org/IВistributedСalculation/RememberCalculationUnit" message="tns:IВistributedСalculation_RememberCalculationUnit_InputMessage" />
@@ -66,6 +72,10 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Calculate">
       <wsdl:output wsaw:Action="http://tempuri.org/IВistributedСalculation/Calculate" message="tns:IВistributedСalculation_Calculate_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IВistributedСalculation/CalculateResponse" message="tns:IВistributedСalculation_Calculate_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Ping">
+      <wsdl:output wsaw:Action="http://tempuri.org/IВistributedСalculation/Ping" message="tns:IВistributedСalculation_Ping_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IВistributedСalculation/PingResponse" message="tns:IВistributedСalculation_Ping_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IВistributedСalculation" type="tns:IВistributedСalculation">
@@ -98,14 +108,23 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IВistributedСalculation/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ВistributedСalculation">
     <wsdl:port name="NetTcpBinding_IВistributedСalculation" binding="tns:NetTcpBinding_IВistributedСalculation">
-      <soap12:address location="net.tcp://epbymogw0089.minsk.epam.com/WcfService/%D0%92istributed%D0%A1alculation.svc" />
+      <soap12:address location="net.tcp://localhost/WcfService/%D0%92istributed%D0%A1alculation.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://epbymogw0089.minsk.epam.com/WcfService/%D0%92istributed%D0%A1alculation.svc</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost/WcfService/%D0%92istributed%D0%A1alculation.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Spn>host/EPBYMOGW0089.minsk.epam.com</Spn>
+          <Spn>host/localhost</Spn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

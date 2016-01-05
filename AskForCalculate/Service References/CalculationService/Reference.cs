@@ -141,6 +141,9 @@ namespace AskForCalculate.CalculationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IВistributedСalculation/Calculate", ReplyAction="http://tempuri.org/IВistributedСalculation/CalculateResponse")]
         AskForCalculate.CalculationService.CalculationOutput Calculate(AskForCalculate.CalculationService.CalculationInput input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IВistributedСalculation/Ping", ReplyAction="http://tempuri.org/IВistributedСalculation/PingResponse")]
+        bool Ping();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

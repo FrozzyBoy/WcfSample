@@ -18,11 +18,24 @@ namespace WcfService
 
 			int length = (input.End - input.Start) / _clients.Count;
 
+			TestClients();
+
+			for (int i = 0; i < _clients.Count; i++)
+			{
+				calculationSum += this.AskForCalculations(_clients[i], input.Start + length * i, input.Start + length * (i + 1)).Result;
+			}
+
+			var result = new CalculationOutput() { Result = calculationSum };
+			return result;
+		}
+
+		private void TestClients()
+		{
 			for (int i = 0; i < _clients.Count; i++)
 			{
 				try
 				{
-					calculationSum += this.AskForCalculations(_clients[i], input.Start + length * i, input.Start + length * (i + 1)).Result;
+					_clients[i].Ping();
 				}
 				catch (ObjectDisposedException)
 				{
@@ -35,9 +48,6 @@ namespace WcfService
 					i--;
 				}
 			}
-
-			var result = new CalculationOutput() { Result = calculationSum };
-			return result;
 		}
 
 		public bool RememberCalculationUnit()

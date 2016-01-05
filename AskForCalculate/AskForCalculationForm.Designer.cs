@@ -66,6 +66,7 @@
 			this.txtResult.Multiline = true;
 			this.txtResult.Name = "txtResult";
 			this.txtResult.ReadOnly = true;
+			this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.txtResult.Size = new System.Drawing.Size(185, 187);
 			this.txtResult.TabIndex = 3;
 			// 

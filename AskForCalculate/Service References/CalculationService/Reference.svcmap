@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c10dd89-d029-4951-8d82-7f5d24d3c192" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62cf1e10-0d7a-4913-906b-30376fa91b30" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost/WcfService/ВistributedСalculation.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ВistributedСalculation.xsd" MetadataType="Schema" ID="0ada845d-8e45-4cb0-a762-a405d9495e23" SourceId="1" SourceUrl="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd2" />
-    <MetadataFile FileName="ВistributedСalculation.wsdl" MetadataType="Wsdl" ID="a9dbc555-7bc1-42c8-adbf-76345a2491f6" SourceId="1" SourceUrl="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?wsdl" />
-    <MetadataFile FileName="ВistributedСalculation1.xsd" MetadataType="Schema" ID="0971af1a-6ace-4ec4-8822-89118da23748" SourceId="1" SourceUrl="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd0" />
-    <MetadataFile FileName="ВistributedСalculation2.xsd" MetadataType="Schema" ID="08e44b87-c9f1-4b6d-b198-702f6e2362ea" SourceId="1" SourceUrl="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd1" />
-    <MetadataFile FileName="ВistributedСalculation.disco" MetadataType="Disco" ID="489f270c-51bd-4f79-a4c7-0e62ffe72d14" SourceId="1" SourceUrl="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?disco" />
+    <MetadataFile FileName="ВistributedСalculation.xsd" MetadataType="Schema" ID="3f04846e-70a4-450f-91e8-e43a97fae625" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd2" />
+    <MetadataFile FileName="ВistributedСalculation.wsdl" MetadataType="Wsdl" ID="1da99549-85f7-4e43-b2d7-6277886eff80" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?wsdl" />
+    <MetadataFile FileName="ВistributedСalculation1.xsd" MetadataType="Schema" ID="1923f06f-5abd-41e9-9f0a-80646e1cd8f8" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd0" />
+    <MetadataFile FileName="ВistributedСalculation2.xsd" MetadataType="Schema" ID="ade87e43-45fa-4175-8fa9-8f582ced4f2a" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd1" />
+    <MetadataFile FileName="ВistributedСalculation.disco" MetadataType="Disco" ID="6a779492-684e-4dca-ab1a-a09e36d71d4d" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

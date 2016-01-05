@@ -11,5 +11,7 @@ namespace WcfService
 	{
 		[OperationContract]
 		CalculationOutput Calculate(CalculationInput input);
+		[OperationContract]
+		bool Ping();
 	}
 }

@@ -121,10 +121,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IВistributedСalculation" contract="CalculationService.IВistributedСalculation" bindingType="netTcpBinding" address="net.tcp://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc" bindingConfiguration="NetTcpBinding_IВistributedСalculation">
+    <endpoint name="NetTcpBinding_IВistributedСalculation" contract="CalculationService.IВistributedСalculation" bindingType="netTcpBinding" address="net.tcp://localhost/WcfService/ВistributedСalculation.svc" bindingConfiguration="NetTcpBinding_IВistributedСalculation">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://epbymogw0089.minsk.epam.com/WcfService/%D0%92istributed%D0%A1alculation.svc</serializedValue>
+          <serializedValue>net.tcp://localhost/WcfService/%D0%92istributed%D0%A1alculation.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -157,7 +157,7 @@
           <serializedValue>System.ServiceModel.Configuration.ServicePrincipalNameElement</serializedValue>
         </property>
         <property path="/identity/servicePrincipalName/value" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>host/EPBYMOGW0089.minsk.epam.com</serializedValue>
+          <serializedValue>host/localhost</serializedValue>
         </property>
         <property path="/identity/dns" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.DnsElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.DnsElement</serializedValue>

@@ -56,6 +56,11 @@ result:{4}{1}
 			return res;
 		}
 
+		public bool Ping()
+		{
+			return true;
+		}
+
 		private int F(int st, int end)
 		{
 			int result = 0;

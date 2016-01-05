@@ -72,6 +72,11 @@ namespace AskForCalculate
 			throw new NotImplementedException();
 		}
 
+		public bool Ping()
+		{
+			return true;
+		}
+
 		#endregion
 	}
 }

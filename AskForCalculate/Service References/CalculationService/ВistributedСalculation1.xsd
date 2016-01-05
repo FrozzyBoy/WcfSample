@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://epbymogw0089.minsk.epam.com/WcfService/ВistributedСalculation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+  <xs:import schemaLocation="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
   <xs:element name="RememberCalculationUnit">
     <xs:complexType>
       <xs:sequence />
@@ -38,6 +38,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="CalculateResult" nillable="true" type="q4:CalculationOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
