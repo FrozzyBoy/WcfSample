@@ -1,9 +1,9 @@
 D:\projects\temp\WcfService\CalculationUnit\bin\Debug\CalculationUnit.exe.config
 D:\projects\temp\WcfService\CalculationUnit\bin\Debug\CalculationUnit.exe
 D:\projects\temp\WcfService\CalculationUnit\bin\Debug\CalculationUnit.pdb
-D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.csprojResolveAssemblyReference.cache
 D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.CalculationUnitForm.resources
 D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.Properties.Resources.resources
 D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.csproj.GenerateResource.Cache
 D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.exe
 D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.pdb
+D:\projects\temp\WcfService\CalculationUnit\obj\Debug\CalculationUnit.csprojResolveAssemblyReference.cache

@@ -56,12 +56,15 @@
 			this.btnCalculate.Name = "btnCalculate";
 			this.btnCalculate.Size = new System.Drawing.Size(100, 23);
 			this.btnCalculate.TabIndex = 2;
-			this.btnCalculate.Text = "Calculate";
+			this.btnCalculate.Text = "Посчитать";
 			this.btnCalculate.UseVisualStyleBackColor = true;
 			this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
 			// 
 			// txtResult
 			// 
+			this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtResult.Location = new System.Drawing.Point(165, 34);
 			this.txtResult.Multiline = true;
 			this.txtResult.Name = "txtResult";
@@ -80,7 +83,7 @@
 			this.Controls.Add(this.txtEnd);
 			this.Controls.Add(this.txtStart);
 			this.Name = "AskForCalculationForm";
-			this.Text = "I ask server for calculation";
+			this.Text = "Я прошу посчитать";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

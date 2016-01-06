@@ -1,73 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using AskForCalculate.CalculationService;
 
 namespace AskForCalculate
 {
-	public partial class AskForCalculationForm : Form, CalculationService.IВistributedСalculationCallback
+	public partial class AskForCalculationForm : Form, IВistributedСalculationCallback
 	{
-		private CalculationService.ВistributedСalculationClient client = null;
+		private ВistributedСalculationClient client = null;
 
-		private int Start
+		private long Start
 		{
 			get
 			{
-				return ParseInt(this.txtStart.Text);
+				return ParseNumber(this.txtStart.Text);
 			}
 		}
 
-		private int End
+		private long End
 		{
 			get
 			{
-				return ParseInt(this.txtEnd.Text);
+				return ParseNumber(this.txtEnd.Text);
 			}
 		}
 
-		private void SetResult(string result)
+		private void SetResult(CalculationOutput result)
 		{
-			this.txtResult.Text += string.Format("{0} -- The result is of calculation is: {1}{2}", DateTime.Now, result, Environment.NewLine);
+			string message = string.IsNullOrWhiteSpace(result.Error) ? string.Format("Результат вычислений:{0}", result.Result) : string.Format("Произошла ошибка{0}", result.Error);
+			this.SetMessage(message);
 		}
 
-		private int ParseInt(string str)
+		private long ParseNumber(string str)
 		{
-			int result;
-			int.TryParse(str, out result);
+			long result;
+			long.TryParse(str, out result);
 			return result;
 		}
 
 		public AskForCalculationForm()
 		{
 			InitializeComponent();
-			var context = new InstanceContext(this);
-			this.client = new CalculationService.ВistributedСalculationClient(context);
-			this.client.Open();
 			this.Disposed += AskForCalculationForm_Disposed;
-
 		}
 
 		private void AskForCalculationForm_Disposed(object sender, EventArgs e)
 		{
-			this.client.Close();
+			if (this.client != null)
+			{
+				this.client.Close();
+			}
 		}
 
 		private void btnCalculate_Click(object sender, EventArgs e)
 		{
-			var indata = new CalculationService.CalculationInput() { Start = this.Start, End = this.End };
-			var result = this.client.GetCalculation(indata);
-			this.SetResult(result.Result.ToString());
+			CalculateDate();
+		}
+
+		private async void CalculateDate()
+		{
+			if (this.client == null)
+			{
+				var context = new InstanceContext(this);
+				this.client = new ВistributedСalculationClient(context);
+				this.client.Open();
+			}
+
+			this.SetMessage("Start calculate");
+
+			var indata = new CalculationInput() { Start = this.Start, End = this.End };
+			CalculationOutput result = await this.client.GetCalculationAsync(indata);
+			this.SetResult(result);
+		}
+
+		private void SetMessage(string message)
+		{
+			Action setMessage = () =>
+			{
+				this.txtResult.AppendText(string.Format("{0} -- {1}{2}", DateTime.Now, message, Environment.NewLine));
+			};
+
+			if (this.txtResult.InvokeRequired)
+			{
+				this.txtResult.Invoke(setMessage);
+			}
+			else
+			{
+				setMessage.Invoke();
+			}
 		}
 
 		#region IВistributedСalculationCallback Members
 
-		public CalculationService.CalculationOutput Calculate(CalculationService.CalculationInput input)
+		public CalculationOutput Calculate(CalculationParameterForUnit input)
 		{
 			throw new NotImplementedException();
 		}

@@ -10,16 +10,22 @@ namespace WcfService
 	public class CalculationInput
 	{
 		[DataMember]
-		public int Start;
+		public long Start;
 
 		[DataMember]
-		public int End;
+		public long End;
 	}
 
 	[DataContract]
 	public class CalculationOutput
 	{
 		[DataMember]
-		public int Result;
+		public long Result;
+
+		[DataMember]
+		public string Error { get; set; }
+
+		[DataMember]
+		public Exception Exception { get; set; }
 	}
 }

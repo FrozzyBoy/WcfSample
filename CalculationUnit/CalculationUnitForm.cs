@@ -1,55 +1,69 @@
 ﻿using System;
+using System.Diagnostics;
 using System.ServiceModel;
 using System.Windows.Forms;
+using CalculationUnit.CalculationService;
 
 namespace CalculationUnit
 {
-	public partial class CalculationUnitForm : Form, CalculationService.IВistributedСalculationCallback
+	public partial class CalculationUnitForm : Form, IВistributedСalculationCallback
 	{
-		private CalculationService.ВistributedСalculationClient client = null;
+		private ВistributedСalculationClient client = null;
 
 		public CalculationUnitForm()
 		{
 			InitializeComponent();
-			var context = new InstanceContext(this);
-			this.client = new CalculationService.ВistributedСalculationClient(context);
-			this.client.Open();
 			this.Disposed += CalculationUnitForm_Disposed;
 		}
 
 		private void CalculationUnitForm_Disposed(object sender, EventArgs e)
 		{
-			this.client.Close();
+			if (this.client != null)
+			{
+				if (this.client.State == CommunicationState.Opened)
+				{
+					this.client.Close();
+				}
+			}
 		}
 
 		private void btnRememberMe_Click(object sender, EventArgs e)
 		{
-				bool result = this.client.RememberCalculationUnit();
-				RememberResult(result);
+			if (this.client == null)
+			{
+				var context = new InstanceContext(this);
+				this.client = new ВistributedСalculationClient(context);
+				this.client.Open();
+			}
+
+			bool result = this.client.RememberCalculationUnit();
+			RememberResult(result);
 		}
 
 		private void RememberResult(bool result)
 		{
-			this.txtLog.Text += string.Format("{0} -- {1}{2}", DateTime.Now, this.GetRememberMeMessage(result), Environment.NewLine);
+			this.txtLog.AppendText(string.Format("{0} -- {1}{2}", DateTime.Now, this.GetRememberMeMessage(result), Environment.NewLine));
+
+			this.btnRememberMe.Enabled = !result;
 		}
 
 		private string GetRememberMeMessage(bool isSuccessfull)
 		{
-			return isSuccessfull ? "Was remembered" : "Was fail";
+			return isSuccessfull ? "Успешное подключение к серверу" : "ОШИБКА при подключении к серверу, попробуйте еще раз";
 		}
 
 		#region IВistributedСalculationCallback Members
 
-		public CalculationService.CalculationOutput Calculate(CalculationService.CalculationInput input)
+		public CalculationOutput Calculate(CalculationParameterForUnit input)
 		{
+			var res = new CalculationOutput() { Result = F(input.X) };
 
-			var res = new CalculationService.CalculationOutput() { Result = F(input.Start, input.End) };
-
-			this.txtLog.Text += string.Format(@"{0} -- log {1}
-start:{2}{1}
-end:{3}{1}
-result:{4}{1}
---------------------------------{1}", DateTime.Now, Environment.NewLine, input.Start, input.End, res.Result);
+			this.txtLog.AppendText(string.Format(
+@"{0} -- Информация {1}
+Выполнен запрос на подсчет{1}
+при х = {2}{1}
+значение функции = {3}{1}
+--------------------------------{1}", DateTime.Now, Environment.NewLine, input.X, res.Result));
 
 			return res;
 		}
@@ -59,16 +73,19 @@ result:{4}{1}
 			return true;
 		}
 
-		private int F(int st, int end)
+		#endregion
+
+		private long F(long x)
 		{
-			int result = 0;
-			for (int i = st; i <= end; i++)
-			{
-				result += i * i;
-			}
+			long result = x * x;
+
 			return result;
 		}
 
-		#endregion
+		private void btnRunYourself_Click(object sender, EventArgs e)
+		{
+			string myName = System.AppDomain.CurrentDomain.FriendlyName.Replace(".vshost", "");
+			Process.Start(myName);
+		}
 	}
 }

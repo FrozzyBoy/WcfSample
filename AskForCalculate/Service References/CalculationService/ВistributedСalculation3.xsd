@@ -30,7 +30,7 @@
   <xs:element name="Calculate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="input" nillable="true" type="q3:CalculationInput" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="input" nillable="true" type="q3:CalculationParameterForUnit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

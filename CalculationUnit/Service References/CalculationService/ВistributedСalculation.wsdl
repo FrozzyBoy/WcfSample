@@ -292,6 +292,7 @@
       <xsd:import schemaLocation="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+      <xsd:import schemaLocation="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IВistributedСalculation_RememberCalculationUnit_InputMessage">

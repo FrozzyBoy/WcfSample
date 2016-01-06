@@ -23,10 +23,10 @@ namespace CalculationUnit.CalculationService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EndField;
+        private long EndField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StartField;
+        private long StartField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39,7 +39,7 @@ namespace CalculationUnit.CalculationService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int End {
+        public long End {
             get {
                 return this.EndField;
             }
@@ -52,7 +52,7 @@ namespace CalculationUnit.CalculationService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Start {
+        public long Start {
             get {
                 return this.StartField;
             }
@@ -84,7 +84,13 @@ namespace CalculationUnit.CalculationService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ResultField;
+        private string ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception ExceptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long ResultField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -97,7 +103,33 @@ namespace CalculationUnit.CalculationService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Result {
+        public string Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception Exception {
+            get {
+                return this.ExceptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
+                    this.ExceptionField = value;
+                    this.RaisePropertyChanged("Exception");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long Result {
             get {
                 return this.ResultField;
             }
@@ -105,6 +137,51 @@ namespace CalculationUnit.CalculationService {
                 if ((this.ResultField.Equals(value) != true)) {
                     this.ResultField = value;
                     this.RaisePropertyChanged("Result");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CalculationParameterForUnit", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.SerializableAttribute()]
+    public partial class CalculationParameterForUnit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long XField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
                 }
             }
         }
@@ -140,7 +217,7 @@ namespace CalculationUnit.CalculationService {
     public interface IВistributedСalculationCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IВistributedСalculation/Calculate", ReplyAction="http://tempuri.org/IВistributedСalculation/CalculateResponse")]
-        CalculationUnit.CalculationService.CalculationOutput Calculate(CalculationUnit.CalculationService.CalculationInput input);
+        CalculationUnit.CalculationService.CalculationOutput Calculate(CalculationUnit.CalculationService.CalculationParameterForUnit input);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IВistributedСalculation/Ping", ReplyAction="http://tempuri.org/IВistributedСalculation/PingResponse")]
         bool Ping();

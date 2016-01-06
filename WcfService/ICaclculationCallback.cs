@@ -10,7 +10,7 @@ namespace WcfService
 	public interface ICaclculationCallback
 	{
 		[OperationContract]
-		CalculationOutput Calculate(CalculationInput input);
+		CalculationOutput Calculate(CalculationParameterForUnit input);
 		[OperationContract]
 		bool Ping();
 	}

@@ -23,3 +23,4 @@ D:\projects\temp\WcfService\WcfService\bin\WcfService.dll
 D:\projects\temp\WcfService\WcfService\bin\WcfService.pdb
 D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.dll
 D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.pdb
+D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache

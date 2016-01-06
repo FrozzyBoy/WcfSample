@@ -93,6 +93,9 @@
     <None Include="Service References\CalculationService\ВistributedСalculation2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\CalculationService\ВistributedСalculation3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
