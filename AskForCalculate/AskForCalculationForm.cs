@@ -66,7 +66,7 @@ namespace AskForCalculate
 				this.client.Open();
 			}
 
-			this.SetMessage("Start calculate");
+			this.SetMessage("Начало вычислений");
 
 			var indata = new CalculationInput() { Start = this.Start, End = this.End };
 			CalculationOutput result = await this.client.GetCalculationAsync(indata);
