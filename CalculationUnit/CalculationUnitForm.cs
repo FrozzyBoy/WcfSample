@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CalculationUnit
@@ -37,7 +30,12 @@ namespace CalculationUnit
 
 		private void RememberResult(bool result)
 		{
-			this.txtLog.Text += string.Format("{0} -- {1}{2}", DateTime.Now, result ? "Was remembered" : "Was fail", Environment.NewLine);
+			this.txtLog.Text += string.Format("{0} -- {1}{2}", DateTime.Now, this.GetRememberMeMessage(result), Environment.NewLine);
+		}
+
+		private string GetRememberMeMessage(bool isSuccessfull)
+		{
+			return isSuccessfull ? "Was remembered" : "Was fail";
 		}
 
 		#region IВistributedСalculationCallback Members
@@ -51,7 +49,7 @@ namespace CalculationUnit
 start:{2}{1}
 end:{3}{1}
 result:{4}{1}
---------------------------------", DateTime.Now, Environment.NewLine, input.Start, input.End, res.Result);
+--------------------------------{1}", DateTime.Now, Environment.NewLine, input.Start, input.End, res.Result);
 
 			return res;
 		}

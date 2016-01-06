@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WcfService
 {
@@ -14,15 +10,17 @@ namespace WcfService
 
 		public CalculationOutput GetCalculation(CalculationInput input)
 		{
+			TestClients();
+
 			int calculationSum = 0;
 
 			int length = (input.End - input.Start) / _clients.Count;
 
-			TestClients();
-
 			for (int i = 0; i < _clients.Count; i++)
 			{
-				calculationSum += this.AskForCalculations(_clients[i], input.Start + length * i, input.Start + length * (i + 1)).Result;
+				int segmentStart = input.Start + length * i;
+				int segmentEnd = input.Start + length * (i + 1);
+				calculationSum += this.AskForCalculations(_clients[i], segmentStart, segmentEnd).Result;
 			}
 
 			var result = new CalculationOutput() { Result = calculationSum };
@@ -35,7 +33,11 @@ namespace WcfService
 			{
 				try
 				{
-					_clients[i].Ping();
+					if (!_clients[i].Ping())
+					{
+						_clients.Remove(_clients[i]);
+						i--;
+					}
 				}
 				catch (ObjectDisposedException)
 				{
@@ -59,7 +61,6 @@ namespace WcfService
 
 		private CalculationOutput AskForCalculations(ICaclculationCallback callback, int start, int end)
 		{
-
 			var curInp = new CalculationInput() { Start = start, End = end };
 			CalculationOutput r = callback.Calculate(curInp);
 			return r;
