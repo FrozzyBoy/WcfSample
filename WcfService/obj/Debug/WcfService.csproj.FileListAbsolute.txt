@@ -21,11 +21,5 @@ D:\projects\temp\WcfService\WcfService\bin\ApplicationInsights.config
 D:\projects\temp\WcfService\WcfService\bin\WcfService.dll.config
 D:\projects\temp\WcfService\WcfService\bin\WcfService.dll
 D:\projects\temp\WcfService\WcfService\bin\WcfService.pdb
-D:\projects\temp\WcfService\WcfService\bin\Microsoft.AI.DependencyCollector.xml
-D:\projects\temp\WcfService\WcfService\bin\Microsoft.AI.ServerTelemetryChannel.xml
-D:\projects\temp\WcfService\WcfService\bin\Microsoft.AI.Web.xml
-D:\projects\temp\WcfService\WcfService\bin\Microsoft.AI.WindowsServer.xml
-D:\projects\temp\WcfService\WcfService\bin\Microsoft.ApplicationInsights.xml
-D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
 D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.dll
 D:\projects\temp\WcfService\WcfService\obj\Debug\WcfService.pdb

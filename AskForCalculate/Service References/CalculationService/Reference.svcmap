@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/WcfService/ВistributedСalculation.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:54404/ВistributedСalculation.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ВistributedСalculation.xsd" MetadataType="Schema" ID="3f04846e-70a4-450f-91e8-e43a97fae625" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd2" />
-    <MetadataFile FileName="ВistributedСalculation.wsdl" MetadataType="Wsdl" ID="1da99549-85f7-4e43-b2d7-6277886eff80" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?wsdl" />
-    <MetadataFile FileName="ВistributedСalculation1.xsd" MetadataType="Schema" ID="1923f06f-5abd-41e9-9f0a-80646e1cd8f8" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd0" />
-    <MetadataFile FileName="ВistributedСalculation2.xsd" MetadataType="Schema" ID="ade87e43-45fa-4175-8fa9-8f582ced4f2a" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?xsd=xsd1" />
-    <MetadataFile FileName="ВistributedСalculation.disco" MetadataType="Disco" ID="6a779492-684e-4dca-ab1a-a09e36d71d4d" SourceId="1" SourceUrl="http://localhost/WcfService/ВistributedСalculation.svc?disco" />
+    <MetadataFile FileName="ВistributedСalculation3.xsd" MetadataType="Schema" ID="d8480572-b126-47b8-ac75-03a7adc0288f" SourceId="1" SourceUrl="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd0" />
+    <MetadataFile FileName="ВistributedСalculation31.xsd" MetadataType="Schema" ID="5694ea1d-8907-4b61-a434-8dffbba6dcea" SourceId="1" SourceUrl="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd2" />
+    <MetadataFile FileName="ВistributedСalculation1.disco" MetadataType="Disco" ID="00912499-f374-4681-b54d-59b3cb6a1f61" SourceId="1" SourceUrl="http://localhost:54404/ВistributedСalculation.svc?disco" />
+    <MetadataFile FileName="ВistributedСalculation32.xsd" MetadataType="Schema" ID="999f38f5-7602-44f8-a148-68f2573ef2f2" SourceId="1" SourceUrl="http://localhost:54404/ВistributedСalculation.svc?xsd=xsd1" />
+    <MetadataFile FileName="ВistributedСalculation1.wsdl" MetadataType="Wsdl" ID="af7c2692-4352-4880-a8ad-525909c97c9d" SourceId="1" SourceUrl="http://localhost:54404/ВistributedСalculation.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
